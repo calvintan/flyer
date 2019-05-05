@@ -4,6 +4,7 @@
   background: #fff;
   font-size: 40px;
   font-family: "NEXTBook",-apple-system,"Avenir next",Avenir,Roboto,Noto,"Helvetica neue",Helvetica,Arial,Sans-serif;
+  font-weight: 200;
   line-height: 1.5;
 }
 
@@ -18,6 +19,10 @@
 
 .editable p, .editable ul {
   margin: 0.8em 0;
+}
+
+.editable h2 {
+  font-weight: 400;
 }
 
 .poster {
