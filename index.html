@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <canvas id="canvas" width="1200" height="2000"></canvas>
+
+    <main>
+      <div id="form">
+        <label class="form-line">
+          URL: 
+          <input type="url" id="form-URL" />
+        </label>
+
+        <div class="form-line">
+          <button id="generate">Generate Flyer by URL</button>
+        </div>
+
+        <div class="form-line">
+          <a href="#" id="download" download="flyer.png">Download as PNG</a>
+        </div>
+      </div>
+
+      <div class="preview-wrapper">
+        <div id="preview">
+          <link rel="stylesheet" href="./flyer.css">
+
+          <img class="poster" alt="poster" src="./poster.png" />
+
+          <img class="qrcode" alt="qrcode" src="./qrcode.png" />
+
+          <div contenteditable="true" class="editable">
+            <h2>Join us</h2>
+
+            <h1></h1>
+
+            <p class="description"></p>
+
+            <p>We are looking for someone who:</p>
+            
+            <ul class="skills"></ul>
+  
+            <a class="link"></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <script src="vendor/rasterizeHTML.allinone.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+#preview {
+  height: 2000px;
+  padding: 0;
+  background: #fff;
+  font-size: 40px;
+  font-family: "NEXTBook",-apple-system,"Avenir next",Avenir,Roboto,Noto,"Helvetica neue",Helvetica,Arial,Sans-serif;
+  line-height: 1.5;
+}
+
+.editable {
+  margin-top: -200px;
+  padding: 0 90px;
+}
+
+.editable h1, .editable h2 {
+  margin: 0.2em 0;
+}
+
+.editable p, .editable ul {
+  margin: 0.8em 0;
+}
+
+.poster {
+  width: 100%;
+}
+
+.qrcode {
+  position: relative;
+  top: -210px;
+  left: 90px;
+  width: 320px;
+  height: 320px;
+}
+
+.link {
+  color: #FF4847;
+}

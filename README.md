@@ -1,0 +1,1 @@
+Due to CORS issues, you MUST run this application under wiredcraft.com domain.
