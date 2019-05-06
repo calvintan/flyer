@@ -4,7 +4,7 @@
   </head>
 
   <body>
-    <canvas id="canvas" width="1200" height="2000"></canvas>
+    <canvas id="canvas" width="1200" height="2200"></canvas>
 
     <main>
       <div id="form">
@@ -29,9 +29,10 @@
 
           <img class="poster" alt="poster" src="./poster.png" />
 
-          <img class="qrcode" alt="qrcode" src="./qrcode.png" />
+          <div class="qrcode">
+          </div>
 
-          <div contenteditable="true" class="editable">
+          <div class="editable" contenteditable="true" spellcheck="false">
             <h2>Join us</h2>
 
             <h1></h1>
@@ -49,6 +50,7 @@
     </main>
     
     <script src="vendor/rasterizeHTML.allinone.js"></script>
+    <script src="vendor/qrcode.min.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

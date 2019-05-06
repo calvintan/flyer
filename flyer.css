@@ -1,5 +1,5 @@
 #preview {
-  height: 2000px;
+  height: 2200px;
   padding: 0;
   background: #fff;
   font-size: 40px;
@@ -35,6 +35,8 @@
   left: 90px;
   width: 320px;
   height: 320px;
+  padding: 20px;
+  background: #fff;
 }
 
 .link {

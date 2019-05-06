@@ -9,6 +9,11 @@ const previewH1 = preview.querySelector('h1')
 const previewDescription = preview.querySelector('.description')
 const previewLink = preview.querySelector('.link')
 const previewSkills = preview.querySelector('.skills')
+const previewQRCode = preview.querySelector('.qrcode')
+const qrcode = new QRCode(previewQRCode, {
+  width: 320,
+  height: 320,
+})
 
 const draw = () => {
   rasterizeHTML.drawDocument(preview, canvas)
@@ -19,6 +24,7 @@ const render = ({URL, title, description, skills}) => {
   previewH1.textContent = title
   previewDescription.textContent = description
   previewSkills.innerHTML = skills.map((skill) => `<li>${skill}.</li>`).join('')
+  qrcode.makeCode(URL)
   draw()
 }
 
