@@ -4,46 +4,51 @@
   </head>
 
   <body>
-    <canvas id="canvas" width="1200" height="2200"></canvas>
+    <canvas id="canvas" width="1200"></canvas>
 
     <main>
-      <div id="form">
+      <div id="form" class="left">
         <label class="form-line">
-          URL: 
-          <input type="url" id="form-URL" />
+          <input placeholder="Type the URL ..." type="url" id="form-URL" />
         </label>
 
         <div class="form-line">
-          <button id="generate">Generate Flyer by URL</button>
+          <button id="generate">
+            Generate Flyer by URL
+          </button>
         </div>
 
         <div class="form-line">
-          <a href="#" id="download" download="flyer.png">Download as PNG</a>
+          <a href="#" id="download" download="flyer.png">
+            <button>Download as PNG</button>
+          </a>
         </div>
       </div>
 
-      <div class="preview-wrapper">
-        <div id="preview">
-          <link rel="stylesheet" href="./NEXTBook.css">
-          <link rel="stylesheet" href="./flyer.css">
-
-          <img class="poster" alt="poster" src="./poster.png" />
-
-          <div class="qrcode">
-          </div>
-
-          <div class="editable" contenteditable="true" spellcheck="false">
-            <h2>Join us</h2>
-
-            <h1></h1>
-
-            <p class="description"></p>
-
-            <p>We are looking for someone who:</p>
-            
-            <ul class="skills"></ul>
+      <div class="right">
+        <div class="preview-wrapper">
+          <div id="preview">
+            <link rel="stylesheet" href="./NEXTBook.css">
+            <link rel="stylesheet" href="./flyer.css">
   
-            <a class="link"></a>
+            <img class="poster" alt="poster" src="./poster.png" />
+  
+            <div class="qrcode">
+            </div>
+  
+            <div class="editable" contenteditable="true" spellcheck="false">
+              <h2></h2>
+  
+              <h1></h1>
+  
+              <p class="description"></p>
+  
+              <!-- <p>We are looking for someone who:</p> -->
+              
+              <!-- <ul class="skills"></ul> -->
+    
+              <a class="link"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -51,6 +56,7 @@
     
     <script src="vendor/rasterizeHTML.allinone.js"></script>
     <script src="vendor/qrcode.min.js"></script>
+    <script src="vendor/debounce.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

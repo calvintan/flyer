@@ -7,6 +7,11 @@ css-font-face-src@^1.0.0:
   resolved "https://registry.yarnpkg.com/css-font-face-src/-/css-font-face-src-1.0.0.tgz#a8c6307d48d9afc84a404082cb1776cd458864b1"
   integrity sha1-qMYwfUjZr8hKQECCyxd2zUWIZLE=
 
+debounce@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.0.tgz#44a540abc0ea9943018dc0eaa95cce87f65cd131"
+  integrity sha512-mYtLl1xfZLi1m4RtQYlZgJUNQjl4ZxVnHzIR8nLLgi4q1YT8o/WM+MK/f8yfcc9s5Ir5zRaPZyZU6xs1Syoocg==
+
 inlineresources@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/inlineresources/-/inlineresources-1.0.0.tgz#633e7d3f863a55935c110027a3541d3b56cdda08"

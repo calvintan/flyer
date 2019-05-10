@@ -1,1 +1,1 @@
-Due to CORS issues, you MUST run this application under wiredcraft.com domain.
+Due to CORS issues, you MUST either run this application under the target domain or make sure the target url has proper CORS headers set.

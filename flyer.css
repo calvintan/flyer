@@ -1,5 +1,5 @@
 #preview {
-  height: 2200px;
+  min-height: 1500px;
   padding: 0;
   background: #fff;
   font-size: 40px;
@@ -10,7 +10,7 @@
 
 .editable {
   margin-top: -200px;
-  padding: 0 90px;
+  padding: 0 90px 1em;
 }
 
 .editable h1, .editable h2 {
