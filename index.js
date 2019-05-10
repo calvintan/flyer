@@ -1,7 +1,7 @@
 const download = document.getElementById('download')
 const canvas = document.getElementById('canvas')
 const form = document.getElementById('form')
-const formURL = document.getElementById('form-targetURL')
+const formURL = document.getElementById('form-URL')
 const generate = document.getElementById('generate')
 const preview = document.getElementById('preview')
 const previewEditable = preview.querySelector('.editable')
@@ -72,6 +72,7 @@ download.addEventListener('click', () => {
 
 const targetURL =  new URL(location.href).searchParams.get('targetURL')
 if (targetURL) {
+  formURL.value = targetURL
   fetchURL(targetURL)
 }
 
