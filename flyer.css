@@ -1,5 +1,4 @@
 #preview {
-  min-height: 1500px;
   padding: 0;
   background: #fff;
   font-size: 40px;
@@ -9,7 +8,6 @@
 }
 
 .editable {
-  margin-top: -200px;
   padding: 0 90px 1em;
 }
 
@@ -22,17 +20,19 @@
 }
 
 .editable h2 {
+  margin-top: 60px;
   font-weight: 400;
 }
 
 .poster {
-  width: 100%;
+  width: 1200px;
+  height: 600px;
 }
 
 .qrcode {
-  position: relative;
-  top: -210px;
-  left: 90px;
+  position: absolute;
+  top: 400px;
+  right: 0;
   width: 320px;
   height: 320px;
   padding: 20px;

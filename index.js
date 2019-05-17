@@ -9,12 +9,14 @@ const previewH1 = preview.querySelector('h1')
 const previewH2 = preview.querySelector('h2')
 const previewDescription = preview.querySelector('.description')
 const previewLink = preview.querySelector('.link')
-const previewSkills = preview.querySelector('.skills')
+const previewPoster = preview.querySelector('.poster')
 const previewQRCode = preview.querySelector('.qrcode')
 const qrcode = new QRCode(previewQRCode, {
   width: 320,
   height: 320,
 })
+const URLObject = new URL(location.href)
+const URLSearch = URLObject.searchParams
 
 const draw = () => {
   const height = preview.offsetHeight
@@ -22,12 +24,12 @@ const draw = () => {
   rasterizeHTML.drawDocument(preview, canvas)
 }
 
-const render = ({targetURL, title, label, description, skills}) => {
+const render = ({targetURL, title, label, description, image}) => {
   previewLink.textContent = targetURL
   previewH1.textContent = title
   previewH2.textContent = label
-  previewDescription.textContent = description
-  // previewSkills.innerHTML = skills.map((skill) => `<li>${skill}.</li>`).join('')
+  previewDescription.innerHTML = description
+  previewPoster.setAttribute('src', image)
   qrcode.makeCode(targetURL)
   draw()
 }
@@ -46,23 +48,22 @@ const fetchURL = (targetURL) => {
       label: targetDocument.querySelector('meta[name="flyer:label"]') ? 
         targetDocument.querySelector('meta[name="flyer:label"]').getAttribute('content') : 
         'Join us',
-      description: targetDocument.querySelector('meta[name="flyer:description"]') ? 
-        targetDocument.querySelector('meta[name="flyer:description"]').getAttribute('content') : 
+      description: targetDocument.querySelector('meta[name="flyer:body"]') ? 
+        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') : 
         targetDocument.querySelector('meta[name="description"]').getAttribute('content'),
-      // skills: [...targetDocument.querySelectorAll('#we-are-looking-for-someone-who + ul li strong')].map(node => node.textContent),
+      image: targetDocument.querySelector('meta[name="flyer:image"]') ?
+        targetDocument.querySelector('meta[name="flyer:image"]').getAttribute('content') :
+        './poster.png',
     }
     render(data)
   })
-  // .catch((error) => {
-  //   console.log(error)
-  //   alert('Unsupported targetURL')
-  // })
 }
 
 previewEditable.addEventListener('input', debounce(draw, 500), false)
 
 generate.addEventListener('click', () => {
-  fetchURL(formURL.value)
+  URLSearch.set('targetURL', formURL.value)
+  location.href = URLObject.href
 })
 
 download.addEventListener('click', () => {
@@ -70,7 +71,7 @@ download.addEventListener('click', () => {
   download.href = dataURL
 })
 
-const targetURL =  new URL(location.href).searchParams.get('targetURL')
+const targetURL =  URLSearch.get('targetURL')
 if (targetURL) {
   formURL.value = targetURL
   fetchURL(targetURL)
