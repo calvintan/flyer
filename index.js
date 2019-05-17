@@ -29,7 +29,7 @@ const render = ({targetURL, title, label, description, image}) => {
   previewH1.textContent = title
   previewH2.textContent = label
   previewDescription.innerHTML = description
-  previewPoster.setAttribute('src', image)
+  previewPoster.style.backgroundImage = 'url(' + image + ')'
   qrcode.makeCode(targetURL)
   draw()
 }
@@ -52,7 +52,7 @@ const fetchURL = (targetURL) => {
         targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') : 
         targetDocument.querySelector('meta[name="description"]').getAttribute('content'),
       image: targetDocument.querySelector('meta[name="flyer:image"]') ?
-        targetDocument.querySelector('meta[name="flyer:image"]').getAttribute('content') :
+        targetDocument.querySelector('meta[property="og:image"]').getAttribute('content') :
         './poster.png',
     }
     render(data)

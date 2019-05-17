@@ -8,6 +8,7 @@
 }
 
 .editable {
+  min-height: 200px;
   padding: 0 90px 1em;
 }
 
@@ -27,6 +28,7 @@
 .poster {
   width: 1200px;
   height: 600px;
+  background-size: cover;
 }
 
 .qrcode {
