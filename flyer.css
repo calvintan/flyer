@@ -28,6 +28,16 @@
 .poster {
   width: 1200px;
   height: 600px;
+  object-fit: cover
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 288px;
+  height: 42px;
+  background-image: url('./logo.png');
   background-size: cover;
 }
 
