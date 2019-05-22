@@ -33,10 +33,10 @@
 
 .logo {
   position: absolute;
-  top: 40px;
-  left: 30px;
-  width: 288px;
-  height: 42px;
+  top: 34px;
+  left: 50px;
+  width: 384px;
+  height: 56px;
   background-image: url('./logo.png');
   background-size: cover;
 }
