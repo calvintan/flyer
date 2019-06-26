@@ -1,6 +1,5 @@
 const download = document.getElementById('download')
 const canvas = document.getElementById('canvas')
-const form = document.getElementById('form')
 const formURL = document.getElementById('form-URL')
 const generate = document.getElementById('generate')
 const preview = document.getElementById('preview')
@@ -67,6 +66,13 @@ generate.addEventListener('click', () => {
   URLSearch.set('targetURL', formURL.value)
   location.href = URLObject.href
 })
+
+formURL.addEventListener('keydown', (e) => {
+  if (e.keyCode === 13) {
+    URLSearch.set('targetURL', formURL.value)
+    location.href = URLObject.href
+  }
+}, false)
 
 download.addEventListener('click', () => {
   const dataURL = canvas.toDataURL('image/png')
