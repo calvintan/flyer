@@ -42,17 +42,19 @@ const fetchURL = (targetURL) => {
     targetDocument.innerHTML = html
     const data = {
       targetURL,
-      title: targetDocument.querySelector('meta[name="flyer:title"]') ? 
-        targetDocument.querySelector('meta[name="flyer:title"]').getAttribute('content') : 
+      title: targetDocument.querySelector('meta[name="flyer:title"]') && 
+        targetDocument.querySelector('meta[name="flyer:title"]').getAttribute('content') || 
         targetDocument.querySelector('h1').textContent,
-      label: targetDocument.querySelector('meta[name="flyer:label"]') ? 
-        targetDocument.querySelector('meta[name="flyer:label"]').getAttribute('content') : 
+      label: targetDocument.querySelector('meta[name="flyer:label"]') && 
+        targetDocument.querySelector('meta[name="flyer:label"]').getAttribute('content') || 
         'Join us',
-      description: targetDocument.querySelector('meta[name="flyer:body"]') ? 
-        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') : 
-        targetDocument.querySelector('meta[name="description"]').getAttribute('content'),
-      image: targetDocument.querySelector('meta[property="og:image"]') ?
-        targetDocument.querySelector('meta[property="og:image"]').getAttribute('content') :
+      description: targetDocument.querySelector('meta[name="flyer:body"]') &&
+        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content').replace(/\s/g, '').length && 
+        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') || 
+        // targetDocument.querySelector('meta[name="description"]').getAttribute('content'),
+        targetDocument.querySelector('div.narrow').innerHTML,
+      image: targetDocument.querySelector('meta[property="og:image"]') &&
+        targetDocument.querySelector('meta[property="og:image"]').getAttribute('content') ||
         './poster.png',
     }
     render(data)
