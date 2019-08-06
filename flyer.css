@@ -1,10 +1,9 @@
 #preview {
   background: #FFF;
-  font-size: 18px;
+  font-size: 36px;
   font-family: "NEXTBook", -apple-system, "Avenir next", Avenir, Roboto, Noto, "Helvetica neue", Helvetica, Arial, Sans-serif;
   font-weight: 200;
   line-height: 160%;
-  padding: 24px;
 }
 
 h1,
@@ -19,18 +18,18 @@ h6 {
 }
 
 h1 {
-  font-size: 52px;
+  font-size: 104px;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 72px;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-size: 24px;
+  font-size: 48px;
 }
 
 a,
