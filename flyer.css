@@ -35,19 +35,7 @@ h6 {
 a,
 .link {
   color: #FF4847;
-  outline: none;
-}
-
-.link {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  display: inline;
-  font-weight: inherit;
-  margin: 0;
-  padding: 0;
-  transition-duration: $ease;
-  transition-property: color;
+  text-decoration: none;
 }
 
 strong {
@@ -56,20 +44,21 @@ strong {
 
 .editable {
   min-height: 200px;
-  padding: 0 90px 1em;
+  padding: 48px;
 }
 
-.editable h1, .editable h2 {
-  margin: 0.2em 0;
+.editable h1,
+.editable h2,
+.editable ul,
+.editable p {
+  margin: 0 0 48px;
+  padding: 0;
 }
 
-.editable p, .editable ul {
-  margin: 0.8em 0;
-}
-
-.editable h2 {
-  margin-top: 60px;
-  font-weight: 400;
+.editable .label {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 24px;
 }
 
 .poster {
@@ -103,6 +92,6 @@ strong {
   padding: 12px;
   position: absolute;
   right: 24px;
-  top: 428px;
+  top: 352px;
   width: 320px;
 }

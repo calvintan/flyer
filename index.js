@@ -5,7 +5,7 @@ const generate = document.getElementById('generate')
 const preview = document.getElementById('preview')
 const previewEditable = preview.querySelector('.editable')
 const previewH1 = preview.querySelector('h1')
-const previewH2 = preview.querySelector('h2')
+const previewLabel = preview.querySelector('.label')
 const previewDescription = preview.querySelector('.description')
 const previewLink = preview.querySelector('.link')
 const previewPoster = preview.querySelector('.poster')
@@ -26,7 +26,7 @@ const draw = () => {
 const render = ({targetURL, title, label, description, image}) => {
   previewLink.textContent = targetURL
   previewH1.textContent = title
-  previewH2.textContent = label
+  previewLabel.textContent = label
   previewDescription.innerHTML = description
   previewPoster.setAttribute('src', image)
   qrcode.makeCode(targetURL)
@@ -41,15 +41,15 @@ const fetchURL = (targetURL) => {
     targetDocument.innerHTML = html
     const data = {
       targetURL,
-      title: targetDocument.querySelector('meta[name="flyer:title"]') && 
-        targetDocument.querySelector('meta[name="flyer:title"]').getAttribute('content') || 
+      title: targetDocument.querySelector('meta[name="flyer:title"]') &&
+        targetDocument.querySelector('meta[name="flyer:title"]').getAttribute('content') ||
         targetDocument.querySelector('h1').textContent,
-      label: targetDocument.querySelector('meta[name="flyer:label"]') && 
-        targetDocument.querySelector('meta[name="flyer:label"]').getAttribute('content') || 
+      label: targetDocument.querySelector('meta[name="flyer:label"]') &&
+        targetDocument.querySelector('meta[name="flyer:label"]').getAttribute('content') ||
         'Join us',
       description: targetDocument.querySelector('meta[name="flyer:body"]') &&
-        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content').replace(/\s/g, '').length && 
-        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') || 
+        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content').replace(/\s/g, '').length &&
+        targetDocument.querySelector('meta[name="flyer:body"]').getAttribute('content') ||
         // targetDocument.querySelector('meta[name="description"]').getAttribute('content'),
         targetDocument.querySelector('div.narrow').innerHTML,
       image: targetDocument.querySelector('meta[property="og:image"]') &&
@@ -84,11 +84,3 @@ if (targetURL) {
   formURL.value = targetURL
   fetchURL(targetURL)
 }
-
-
-
-
-
-
-
-
