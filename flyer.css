@@ -1,10 +1,58 @@
 #preview {
-  padding: 0;
-  background: #fff;
-  font-size: 40px;
-  font-family: "NEXTBook",-apple-system,"Avenir next",Avenir,Roboto,Noto,"Helvetica neue",Helvetica,Arial,Sans-serif;
+  background: #FFF;
+  font-size: 18px;
+  font-family: "NEXTBook", -apple-system, "Avenir next", Avenir, Roboto, Noto, "Helvetica neue", Helvetica, Arial, Sans-serif;
   font-weight: 200;
-  line-height: 1.5;
+  line-height: 160%;
+  padding: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: 24px;
+}
+
+a,
+.link {
+  color: #FF4847;
+  outline: none;
+}
+
+.link {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  transition-duration: $ease;
+  transition-property: color;
+}
+
+strong {
+  font-weight: 400;
 }
 
 .editable {
@@ -41,16 +89,21 @@
   background-size: cover;
 }
 
-.qrcode {
+.shadow {
+  background: linear-gradient(-10deg, rgba(0,0,0,0), rgba(0,0,0,0) ,rgba(0,0,0,1));
+  height: 600px;
+  left: 0;
   position: absolute;
-  top: 400px;
-  right: 0;
-  width: 320px;
-  height: 320px;
-  padding: 20px;
-  background: #fff;
+  top: 0;
+  width: 1200px;
 }
 
-.link {
-  color: #FF4847;
+.qrcode {
+  background: #FFF;
+  height: 320px;
+  padding: 12px;
+  position: absolute;
+  right: 24px;
+  top: 428px;
+  width: 320px;
 }
