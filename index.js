@@ -5,7 +5,7 @@ const generate = document.getElementById('generate')
 const preview = document.getElementById('preview')
 const previewEditable = preview.querySelector('.editable')
 const previewH1 = preview.querySelector('h1')
-const previewLabel = preview.querySelector('.label')
+const previewH2 = preview.querySelector('.label')
 const previewDescription = preview.querySelector('.description')
 const previewLink = preview.querySelector('.link')
 const previewPoster = preview.querySelector('.poster')
@@ -26,7 +26,7 @@ const draw = () => {
 const render = ({targetURL, title, label, description, image}) => {
   previewLink.textContent = targetURL
   previewH1.textContent = title
-  previewLabel.textContent = label
+  previewH2.textContent = label
   previewDescription.innerHTML = description
   previewPoster.setAttribute('src', image)
   qrcode.makeCode(targetURL)
