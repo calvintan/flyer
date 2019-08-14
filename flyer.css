@@ -70,8 +70,8 @@ strong {
 
 .logo {
   position: absolute;
-  top: 34px;
-  left: 50px;
+  top: 48px;
+  left: 48px;
   width: 384px;
   height: 56px;
   background-image: url('./logo.png');
