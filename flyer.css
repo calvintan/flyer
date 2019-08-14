@@ -50,9 +50,14 @@ strong {
 
 .editable h1,
 .editable h2,
-.editable ul,
 .editable p {
   margin: 0 0 48px;
+  padding: 0;
+}
+
+.editable ul,
+.editable ol {
+  margin: 0 0 48px 48px;
   padding: 0;
 }
 
